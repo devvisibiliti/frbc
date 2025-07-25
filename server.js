@@ -30,10 +30,7 @@ app.get('/*fallback', (req, res)=>{
 
 //connect mongoDB
 
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+mongoose.connect(process.env.MONGO_URI)
 .then(() => {
   console.log('MongoDB Connected');
   app.listen(process.env.PORT, () => {
